@@ -1,5 +1,8 @@
 #!/usr/bin/env python
 """Django's command-line utility for administrative tasks."""
+import aikido_zen
+aikido_zen.protect()
+
 import os
 import sys
 
