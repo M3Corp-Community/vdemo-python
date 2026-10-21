@@ -22,6 +22,7 @@ import mimetypes
 
 from app.models import User, Blabber
 from app.forms import RegisterForm
+from aikido_zen import set_user
 
 
 # Get logger
@@ -146,6 +147,7 @@ def login(request):
                     else:
                         logger.info("Setting session username to " + username)
                         request.session['username'] = row['username']
+                        set_user({"id": row['username'], "name": row['username']})
                     
                 else:
                     logger.info("User not found")
